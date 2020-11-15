@@ -9,11 +9,11 @@ import Pagination from "../components/Pagination"
 const BlogList = props => {
   const postList = props.data.allMarkdownRemark.edges
 
-  const { currentPage, numPages } = props.pageContext;
-  const isFirst = currentPage === 1;
-  const isLast = currentPage === numPages;
-  const prevPage = currentPage - 1 === 1 ? '/' : `/page/${currentPage - 1}`;
-  const nextPage = `/page/${currentPage + 1}`;
+  const { currentPage, numPages } = props.pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage - 1 === 1 ? "/" : `/page/${currentPage - 1}`
+  const nextPage = `/page/${currentPage + 1}`
 
   return (
     <Layout>
@@ -26,16 +26,16 @@ const BlogList = props => {
             fields: { slug },
           },
         }) => (
-            <PostItem
-              slug={slug}
-              background={background}
-              category={category}
-              date={date}
-              timeToRead={timeToRead}
-              title={title}
-              description={description}
-            />
-          )
+          <PostItem
+            slug={slug}
+            background={background}
+            category={category}
+            date={date}
+            timeToRead={timeToRead}
+            title={title}
+            description={description}
+          />
+        )
       )}
 
       <Pagination
@@ -44,7 +44,8 @@ const BlogList = props => {
         currentPage={currentPage}
         numPages={numPages}
         prevPage={prevPage}
-        nextPage={nextPage} />
+        nextPage={nextPage}
+      />
     </Layout>
   )
 }
