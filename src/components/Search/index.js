@@ -3,6 +3,7 @@ import * as S from "./styled.js"
 
 import algoliasearch from "algoliasearch/lite"
 import { InstantSearch, SearchBox, Hits, Stats } from "react-instantsearch-dom"
+import Hit from "./Hit"
 
 const algolia = {
   appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -16,8 +17,14 @@ const Search = () => (
   <S.SearchWrapper>
     <InstantSearch searchClient={searchClient} indexName={algolia.indexName}>
       <SearchBox autoFocus translations={{ placeholder: "Pesquisar..." }} />
-      <Stats />
-      <Hits />
+      <Stats
+        translations={{
+          stats(nbHits, timeSpentsMs) {
+            return `${nbHits} retultados encontrados em ${timeSpentsMs}ms`
+          },
+        }}
+      />
+      <Hits hitComponent={Hit} />
     </InstantSearch>
   </S.SearchWrapper>
 )
