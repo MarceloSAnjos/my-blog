@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-import { Link } from 'gatsby';
+import { Link } from "gatsby"
 
 export const MenuBarWrapper = styled.aside`
   align-items: center;
-  background:#192734;
-  border-left: 1px solid #38444d;
+  background: var(--mediumBackground);
+  border-left: 1px solid var(--borders);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -14,28 +14,36 @@ export const MenuBarWrapper = styled.aside`
   position: fixed;
   right: 0;
   width: 3.75rem;
-`;
+`
 
 export const MenuBarGroup = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 export const MenuBarLink = styled(Link)`
   display: block;
-`;
+`
 
 export const MenuBarItem = styled.span`
-  color: #8899a6;
+  color: var(--texts);
   cursor: pointer;
-  display:block;
+  display: block;
   height: 3.75;
   padding: 1.1rem;
   position: relative;
   width: 3.75rem;
   transition: color 0.5s;
-  
-  &:hover{
-    color: #1fa1f2;
+
+  &.light {
+    color: #d4d400;
+
+    &:hover {
+      color: #e2e240;
+    }
   }
-`;
+
+  &:hover {
+    color: var(--highlight);
+  }
+`
