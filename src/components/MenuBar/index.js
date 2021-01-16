@@ -7,6 +7,8 @@ import { LightbulbFlash as Light } from "@styled-icons/remix-line/LightbulbFlash
 import { Grid } from "@styled-icons/boxicons-regular/Grid"
 import { List } from "@styled-icons/ionicons-outline/List"
 
+import getThemeColor from "../../utils/getThemeColor"
+
 import * as S from "./styled"
 
 const MenuBar = () => {
@@ -27,12 +29,26 @@ const MenuBar = () => {
   return (
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
-        <S.MenuBarLink to="/" title="Voltar para Home">
+        <S.MenuBarLink
+          cover
+          direction="left"
+          bg={getThemeColor()}
+          duration="0.6"
+          to="/"
+          title="Voltar para Home"
+        >
           <S.MenuBarItem>
             <Home />
           </S.MenuBarItem>
         </S.MenuBarLink>
-        <S.MenuBarLink to="/search/" title="Pesquisar">
+        <S.MenuBarLink
+          cover
+          direction="left"
+          bg={getThemeColor()}
+          duration="0.6"
+          to="/search/"
+          title="Pesquisar"
+        >
           <S.MenuBarItem>
             <Search />
           </S.MenuBarItem>
@@ -53,6 +69,7 @@ const MenuBar = () => {
           onClick={() => {
             window.__setPreferredDisplay(isListMode ? "grid" : "list")
           }}
+          className="display"
         >
           {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>

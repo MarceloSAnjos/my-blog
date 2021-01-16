@@ -9,6 +9,7 @@ module.exports = {
     author: `@Marcelodosanjos`,
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     //needs to be the first to work with gatsby-remark-images
@@ -77,6 +78,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+        icon: `src/images/profile-photo.jpg`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
