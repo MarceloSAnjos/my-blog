@@ -7,6 +7,7 @@ module.exports = {
     position: `Web Developer`,
     description: `A blog about web development and other cool stuff `,
     author: `@Marcelodosanjos`,
+    siteUrl: `https://marcelodosanjos.com.br`,
   },
   plugins: [
     `gatsby-plugin-transition-link`,
@@ -72,17 +73,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Marcelo dos Anjos`,
+        short_name: `Marcelo dos Anjos`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#16202c`,
+        theme_color: `#16202c`,
         display: `minimal-ui`,
-        icon: `src/images/profile-photo.jpg`,
+        icon: `src/images/gatsby-icon.png`,
       },
     },
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
