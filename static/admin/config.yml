@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: MarceloSAnjos/my-blog
   branch: master
   site_domain: marcelodosanjos.netlify.app
